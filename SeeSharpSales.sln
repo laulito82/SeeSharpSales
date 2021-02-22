@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeeSharpSales", "SeeSharpSales\SeeSharpSales.csproj", "{22FD0326-0F4B-472A-BEB3-D881B648CC83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22FD0326-0F4B-472A-BEB3-D881B648CC83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FD0326-0F4B-472A-BEB3-D881B648CC83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FD0326-0F4B-472A-BEB3-D881B648CC83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FD0326-0F4B-472A-BEB3-D881B648CC83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0D8D837-C608-43A6-B177-8A5EB2E4E463}
+	EndGlobalSection
+EndGlobal

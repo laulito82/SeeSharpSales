@@ -1,5 +1,5 @@
 using Xunit;
-
+using SeeSharpSales;
 
 namespace TestSeeSharpSales
 {

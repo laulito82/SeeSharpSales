@@ -40,7 +40,13 @@ namespace SeeSharpSales
             
         }
 
+        public bool isRegion(string regionInn)
+        {
+            if (Region == regionInn)
+                return true;
 
+            return false;
+        }
 
 
         

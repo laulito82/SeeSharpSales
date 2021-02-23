@@ -15,9 +15,22 @@ namespace TestSeeSharpSales
         }
         
         [Fact]
-        public void Test()
+        public void isRegionTrueTest()
         {
+            salesRecord.Region = "Europe";
             
+            Assert.True(salesRecord.isRegion("Europe"));    
         }
+
+        [Fact]
+        public void isRegionFalseTest()
+        {
+            salesRecord.Region = "Asia";
+
+            Assert.False(salesRecord.isRegion("Europe"));
+        }
+
+
+
     }
 }

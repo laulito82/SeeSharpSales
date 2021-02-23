@@ -11,7 +11,9 @@ namespace SeeSharpSales
         {
             Console.WriteLine("Welcome to project See Sharp Sales");
 
-            using (var streamReader = new StreamReader("../../Files/SalesRecords.csv"))
+            string filepath = @"c:/temp/SalesRecords.csv";
+
+            using (var streamReader = new StreamReader($"{filepath}"))
             {
                 using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))
                 {

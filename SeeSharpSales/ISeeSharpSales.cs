@@ -17,11 +17,13 @@ namespace SeeSharpSales
         //(List <ourName> salesrecord = AddSampledata), we could change it to (List <IReadable> = AddSampledata) 
         //Because the method knows it will get the right info from the file 
 
+        //1.file must have a nam
         string Name { get; }
 
+        //1. need a method to check if we have a file name of the type we support. We can change the name accorrding to the method written in SalesRecord
         void CorrectFileName();
 
-        //2 coulmns we new in the file we want to use
+        //2. coulmns we need in the file we want to use
         string Region { get; }
 
         string Country { get; }

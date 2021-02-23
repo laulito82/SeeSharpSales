@@ -30,6 +30,21 @@ namespace TestSeeSharpSales
             Assert.False(salesRecord.isRegion("Europe"));
         }
 
+        [Fact]
+        public void isOrderIDTrueTest()
+        {
+            salesRecord.OrderID = 686800706;
+
+            Assert.True(salesRecord.isOrderID(686800706));
+        }
+
+        [Fact]
+        public void isOrderIDFalseTest()
+        {
+            salesRecord.OrderID = 686800706;
+
+            Assert.False(salesRecord.isOrderID(686800711));
+        }
 
 
     }

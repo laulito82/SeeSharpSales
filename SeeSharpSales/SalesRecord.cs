@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SeeSharpSales
 {
@@ -63,16 +64,10 @@ namespace SeeSharpSales
 
             return false;
         }
-        
 
-
-
-
-
-
-
-
-
-
+        //public int totalUnitsSold(int totalSales)
+        //{
+        //    return totalSales = UnitsSold.Sum;
+        //}
     }
 }

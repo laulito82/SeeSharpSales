@@ -48,7 +48,13 @@ namespace SeeSharpSales
             return false;
         }
 
+        public bool isOrderID(int orderIDInn)
+        {
+            if (OrderID == orderIDInn)
+                return true;
 
+            return false;
+        }
         
 
 

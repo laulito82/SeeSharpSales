@@ -7,6 +7,8 @@ namespace SeeSharpSales
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to project See Sharp Sales");
+
+
         }
     }
 }

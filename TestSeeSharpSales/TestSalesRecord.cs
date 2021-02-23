@@ -6,22 +6,18 @@ namespace TestSeeSharpSales
     public class TestSalesRecord
     {
 
-        SalesRecord recordFirst;
+        SalesRecord salesRecord;
 
         public TestSalesRecord()
         {
-            recordFirst = new SalesRecord();
+            salesRecord = new SalesRecord();
 
         }
         
         [Fact]
-        public void ConstructorTest()
+        public void Test()
         {
-            SalesRecord salesRecord = new SalesRecord();
-
-            int actual = recordFirst.OrderID + 1;
-
-            Assert.Equal(salesRecord.OrderID, actual);
+            
         }
     }
 }

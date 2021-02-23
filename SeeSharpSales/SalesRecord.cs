@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SeeSharpSales
 {
@@ -48,6 +49,14 @@ namespace SeeSharpSales
             return false;
         }
 
+        public bool isCountry(string countryInn)
+        {
+            if (Country == countryInn)
+                return true;
+
+            return false;
+        }
+
         public bool isOrderID(int orderIDInn)
         {
             if (OrderID == orderIDInn)
@@ -55,16 +64,10 @@ namespace SeeSharpSales
 
             return false;
         }
-        
 
-
-
-
-
-
-
-
-
-
+        //public int totalUnitsSold(int totalSales)
+        //{
+        //    return totalSales = UnitsSold.Sum;
+        //}
     }
 }

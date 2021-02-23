@@ -14,22 +14,46 @@ namespace SeeSharpSales
     }
     #endregion
 
-    class SalesRecord
-    {
-        string region;
-        string country;
-        string itemType;
-        SalesChannel salesChannel;
-        OrderPriority orderPriority;
-        DateTime orderDate;
-        int orderID;
-        DateTime shipDate;
-        int unitsSold;
-        double unitPrice;
-        double unitCost;
-        double totalRevenue;
-        double totalCost;
-        double totalProfit;
 
-    }
+    public class SalesRecord
+    {
+
+        public static int keyID = 0;
+
+        public string Region { get; }
+        public string Country { get; }
+        public string ItemType { get; }
+        public SalesChannel SalesChannel { get; }
+        public OrderPriority OrderPriority { get; }
+        public DateTime OrderDate { get; }
+        public int OrderID { get; }
+        public DateTime ShipDate { get; }
+        public int unitsSold { get; }
+        public double unitPrice { get; }
+        public double unitCost { get; }
+        public double totalRevenue { get; } 
+        public double totalCost { get; }
+        public double totalProfit { get; }
+
+
+        public SalesRecord()
+        {
+            OrderID = keyID++;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 }

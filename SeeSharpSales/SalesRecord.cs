@@ -19,20 +19,20 @@ namespace SeeSharpSales
     {
         
         
-        public string Region { get; }
-        public string Country { get; }
-        public string ItemType { get; }
-        public SalesChannel SalesChannel { get; }
-        public OrderPriority OrderPriority { get; }
-        public DateTime OrderDate { get; }
-        public int OrderID { get; }
-        public DateTime ShipDate { get; }
-        public int UnitsSold { get; }
-        public double UnitPrice { get; }
-        public double UnitCost { get; }
-        public double TotalRevenue { get; } 
-        public double TotalCost { get; }
-        public double TotalProfit { get; }
+        public string Region { get; set; }
+        public string Country { get; set; }
+        public string ItemType { get; set; }
+        public SalesChannel SalesChannel { get; set; }
+        public OrderPriority OrderPriority { get; set; }
+        public DateTime OrderDate { get; set; }
+        public int OrderID { get; set; }
+        public DateTime ShipDate { get; set; }
+        public int UnitsSold { get; set; }
+        public double UnitPrice { get; set; }
+        public double UnitCost { get; set; }
+        public double TotalRevenue { get; set; } 
+        public double TotalCost { get; set; }
+        public double TotalProfit { get; set; }
         
 
         public SalesRecord()

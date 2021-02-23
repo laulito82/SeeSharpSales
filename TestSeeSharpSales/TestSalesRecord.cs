@@ -6,22 +6,31 @@ namespace TestSeeSharpSales
     public class TestSalesRecord
     {
 
-        SalesRecord recordFirst;
+        SalesRecord salesRecord;
 
         public TestSalesRecord()
         {
-            recordFirst = new SalesRecord();
+            salesRecord = new SalesRecord();
 
         }
         
         [Fact]
-        public void ConstructorTest()
+        public void isRegionTrueTest()
         {
-            SalesRecord salesRecord = new SalesRecord();
-
-            int actual = recordFirst.OrderID + 1;
-
-            Assert.Equal(salesRecord.OrderID, actual);
+            salesRecord.Region = "Europe";
+            
+            Assert.True(salesRecord.isRegion("Europe"));    
         }
+
+        [Fact]
+        public void isRegionFalseTest()
+        {
+            salesRecord.Region = "Asia";
+
+            Assert.False(salesRecord.isRegion("Europe"));
+        }
+
+
+
     }
 }

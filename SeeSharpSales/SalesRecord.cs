@@ -17,31 +17,39 @@ namespace SeeSharpSales
 
     public class SalesRecord
     {
-
-        public static int keyID = 0;
-
-        public string Region { get; }
-        public string Country { get; }
-        public string ItemType { get; }
-        public SalesChannel SalesChannel { get; }
-        public OrderPriority OrderPriority { get; }
-        public DateTime OrderDate { get; }
-        public int OrderID { get; }
-        public DateTime ShipDate { get; }
-        public int unitsSold { get; }
-        public double unitPrice { get; }
-        public double unitCost { get; }
-        public double totalRevenue { get; } 
-        public double totalCost { get; }
-        public double totalProfit { get; }
-
+        
+        
+        public string Region { get; set; }
+        public string Country { get; set; }
+        public string ItemType { get; set; }
+        public SalesChannel SalesChannel { get; set; }
+        public OrderPriority OrderPriority { get; set; }
+        public DateTime OrderDate { get; set; }
+        public int OrderID { get; set; }
+        public DateTime ShipDate { get; set; }
+        public int UnitsSold { get; set; }
+        public double UnitPrice { get; set; }
+        public double UnitCost { get; set; }
+        public double TotalRevenue { get; set; } 
+        public double TotalCost { get; set; }
+        public double TotalProfit { get; set; }
+        
 
         public SalesRecord()
         {
-            OrderID = keyID++;
+            
+        }
+
+        public bool isRegion(string regionInn)
+        {
+            if (Region == regionInn)
+                return true;
+
+            return false;
         }
 
 
+        
 
 
 
@@ -52,8 +60,5 @@ namespace SeeSharpSales
 
 
 
-
-
-
-}
+    }
 }

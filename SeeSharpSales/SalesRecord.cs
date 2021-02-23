@@ -48,6 +48,14 @@ namespace SeeSharpSales
             return false;
         }
 
+        public bool isCountry(string countryInn)
+        {
+            if (Country == countryInn)
+                return true;
+
+            return false;
+        }
+
         public bool isOrderID(int orderIDInn)
         {
             if (OrderID == orderIDInn)

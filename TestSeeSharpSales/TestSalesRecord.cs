@@ -23,6 +23,22 @@ namespace TestSeeSharpSales
         }
 
         [Fact]
+        public void isCountryTrueTest()
+        {
+            salesRecord.Country = "Montenegro";
+
+            Assert.True(salesRecord.isCountry("Montenegro"));
+        }
+
+        [Fact]
+        public void isCountryFalseTest()
+        {
+            salesRecord.Country = "USA";
+
+            Assert.False(salesRecord.isCountry("Montenegro"));
+        }
+
+        [Fact]
         public void isRegionFalseTest()
         {
             salesRecord.Region = "Asia";

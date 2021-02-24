@@ -38,7 +38,7 @@ namespace SeeSharpSales
 
         }
 
-        private int TotalSoldPerRegion(string region)
+        public int TotalSoldPerRegion(string region)
         {
             int sumSales = 0;
             foreach (SalesRecord sr in SalesRecords)
@@ -50,6 +50,19 @@ namespace SeeSharpSales
                 }
             }
             return sumSales;
+        }
+
+        public double TotalProfit()
+        {
+            double sumProfit = 0;
+            foreach (SalesRecord sr in SalesRecords)
+            {
+                if (sr.isTotalProfit())
+                {
+                    sumProfit += sr.TotalProfit;
+                }
+            }
+            return sumProfit;
         }
 
         private int ListRegion(string region)

@@ -31,17 +31,20 @@ namespace SeeSharpSales
 
             
 
-            Console.WriteLine($"Rauls baby TotalSold = {SalesRecordsList.TotalSold()} "); 
+            Console.WriteLine($"Rauls baby TotalSold = {SalesRecordsList.TotalSold()} ");
+            Console.WriteLine($"Total sales Asia: {SalesRecordsList.TotalSoldPerRegion("Asia")}");
+            Console.WriteLine($"Total sales Europe: {SalesRecordsList.TotalSoldPerRegion("Europe")}");
+            Console.WriteLine($"Total sales Sub-Saharan Africa: {SalesRecordsList.TotalSoldPerRegion("Sub-Saharan Africa")}");
+            Console.WriteLine($"Rauls baby TotalProfit = {SalesRecordsList.TotalProfit():c} ");
 
-          
-         /*
-            int countFound = ListRegion(SaleRecList, "Europe"); //Skal seff ikke være hardkodet 
-            Console.WriteLine($"Europe was found in {countFound} rows");
+            /*
+               int countFound = ListRegion(SaleRecList, "Europe"); //Skal seff ikke være hardkodet 
+               Console.WriteLine($"Europe was found in {countFound} rows");
 
-         */   
+            */
             //int countSoldRegion = TotalSoldPerRegion(SaleRecList, "Europe"); //Raul: denne luringen skal vise deg solgt per region - men vi må få en variabel for region.
             //Console.WriteLine($"We have sold a totalt of {countSoldRegion} units in Europe");
-        
+
         }
 
         private static readonly SalesRecordsList SalesRecordsList = new SalesRecordsList();

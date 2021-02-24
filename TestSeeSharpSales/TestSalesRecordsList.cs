@@ -1,5 +1,7 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using SeeSharpSales;
+using System.Collections.Generic;
 
 namespace TestSeeSharpSales
 {
@@ -19,20 +21,24 @@ namespace TestSeeSharpSales
         [Fact]
         public void CountThisRegionTest()
         {
-            SalesRecord en = new SalesRecord();
-            en.Region = "Asia";
-            list.SalesRecords.Add(en);
+            //SalesRecord en = new SalesRecord();
+            //en.Region = "Asia";
+            //list.SalesRecords.Add(en);
 
-            SalesRecord to = new SalesRecord();
-            to.Region = "Europa";
-            list.SalesRecords.Add(to);
+            //SalesRecord to = new SalesRecord();
+            //to.Region = "Europa";
+            //list.SalesRecords.Add(to);
 
-            SalesRecord tre = new SalesRecord();
-            tre.Region = "Asia";
-            list.SalesRecords.Add(tre);
+            //SalesRecord tre = new SalesRecord();
+            //tre.Region = "Asia";
+            //list.SalesRecords.Add(tre);
 
             //Assert.Equal(2, list.CountThisRegion("ASIA"));
-            Assert.False(false);
+
+            ////List<string> region = new List<string> { "Asia", "Europe", "asia" };
+            ////String actual = fixture.CountThisRegion("Asia");
+            ////String expected = list.CountThisRegion("ASIA");
+            ////Assert.Equal(actual, expected);
         }
 
 
@@ -45,6 +51,6 @@ namespace TestSeeSharpSales
 
 
 
-      
+
     }
 }

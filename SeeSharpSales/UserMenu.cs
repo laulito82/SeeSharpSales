@@ -6,14 +6,20 @@ namespace SeeSharpSales
 {
     public class UserMenu
     {
+        public static string filepath;
+
         public static string ChooseFileToAnalyse()
         {
             Console.WriteLine("Welcome to SeeSharpSale, your trusted salesrecordsanalyser! \nTo get started, type in the path to the file you want to analyse");
-            string filepath = Console.ReadLine();
+            filepath = Console.ReadLine();
 
             //to be done check if the filename is valid and if it is reurn the  filepath so we can use it in main
             return filepath;
         }
+
+        //kodebit for å bruke i main i stede for @blablabal:
+        //ReadFile(UserMenu.filepath, listSalesRecords);
+       
 
         public static void DisplayMenu()
         {
@@ -27,24 +33,19 @@ namespace SeeSharpSales
 
             Console.ResetColor();
 
-
             Console.WriteLine("\nTheese are your options:");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n press 1 to say hello");
-            Console.ResetColor();
+            Console.WriteLine("\n Press 1 to print report");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n press 2 to *second option*");
-            Console.ResetColor();
+            Console.WriteLine("\n Press 2 to se possible calculations");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n press 3 to *third option*");
-            Console.ResetColor();
+            Console.WriteLine("\n Press 3 write to different fileformat");
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
+
             Console.WriteLine("\n-------------------------------------------");
+
             Console.ResetColor();
         }
 

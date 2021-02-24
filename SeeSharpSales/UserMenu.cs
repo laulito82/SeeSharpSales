@@ -7,18 +7,34 @@ namespace SeeSharpSales
     public class UserMenu
     {
         public static string filepath;
-
+       
         public static string ChooseFileToAnalyse()
         {
             Console.WriteLine("Welcome to SeeSharpSale, your trusted salesrecordsanalyser! \nTo get started, type in the path to the file you want to analyse");
             filepath = Console.ReadLine();
-
-            //to be done check if the filename is valid and if it is reurn the  filepath so we can use it in main
             return filepath;
         }
 
         //kodebit for å bruke i main i stede for @blablabal:
         //ReadFile(UserMenu.filepath, listSalesRecords);
+
+        //This func should be in main. Because of inheritance and because break should not be just break but a command to run the file.
+        public enum FileType { none = 0, csv = 1, xml = 2, json = 3 }
+
+        public static void CheckIfFileIsValid()
+        {
+            var types = Enum.GetValues(typeof(FileType)) as FileType[];
+           
+            foreach (var type in types)
+            {
+                if (filepath.EndsWith(type.ToString()))
+                {
+                    break;
+                }
+            }
+
+            Console.WriteLine("Invalid filename");
+        }
        
 
         public static void DisplayMenu()
@@ -73,7 +89,7 @@ namespace SeeSharpSales
             switch (selectedOption)
             {
 
-                case 1: //test 1 Hello
+                case 1: //print report
                     FirstOptionForTest();
                     break;
 

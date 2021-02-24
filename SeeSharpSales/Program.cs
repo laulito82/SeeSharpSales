@@ -30,6 +30,9 @@ namespace SeeSharpSales
             int countFound = ListRegion(listSalesRecords, "Europe"); //Skal seff ikke være hardkodet 
             Console.WriteLine($"Europe was found in {countFound} rows");
 
+            int countSold = TotalSold(listSalesRecords); //Raul: her regner den sammen totalt antall solgte enheter
+            Console.WriteLine($"We have sold a total of {countSold} items!! KA-CHING!!");
+
 
 
         }
@@ -50,6 +53,23 @@ namespace SeeSharpSales
                 
             }
             return countRegion;
+        }
+
+        private static int TotalSold(List<SalesRecord> listSalesRecords)
+        {
+            int sumSales = 0;
+            int countAll = 0;
+            foreach (SalesRecord sr in listSalesRecords)
+            {
+                if (sr.isUnitsSold())
+                {
+                    sumSales += sr.UnitsSold;
+                    Console.WriteLine($"{sr.UnitsSold} accumulated to {sumSales}");
+                }
+                countAll++;
+            }
+            return sumSales;
+
         }
 
         static void ReadFile(string filepath, List<SalesRecord> listSalesRecords)

@@ -60,6 +60,14 @@ namespace SeeSharpSales
             return false;
         }
 
+        public bool isUnitsSold()
+        {
+            if (UnitsSold > 0)
+                return true;
+
+            return false;
+        }
+
         public bool isOrderID(int orderIDInn)
         {
             if (OrderID == orderIDInn)
@@ -84,6 +92,13 @@ namespace SeeSharpSales
             UnitsSold += numberOfSoldItems;
             //https://stackoverflow.com/questions/2419343/how-to-sum-up-an-array-of-integers-in-c-sharp
         }
+
+        //prøver meg på totalsum, men får det ikke helt til :-(
+        //utgangspunkt:
+        //int[] array = { 1, 2, 3, 4, 5 };
+        //int sum = array.Sum();
+        //Console.WriteLine(sum);
+
 
         /*
         public int totalUnitsSold(int totalSales)

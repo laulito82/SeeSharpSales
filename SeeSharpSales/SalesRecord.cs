@@ -4,6 +4,7 @@ using System.Linq;
 namespace SeeSharpSales
 {
     #region enums
+    
     public enum SalesChannel
     {
         Online, Offline
@@ -13,6 +14,7 @@ namespace SeeSharpSales
     {
         C, H, L, M
     }
+    
     #endregion
 
 
@@ -23,11 +25,11 @@ namespace SeeSharpSales
         public string Region { get; set; }
         public string Country { get; set; }
         public string ItemType { get; set; }
-        public SalesChannel SalesChannel { get; set; }
-        public OrderPriority OrderPriority { get; set; }
-        public DateTime OrderDate { get; set; }
+        public string SalesChannel { get; set; }
+        public string OrderPriority { get; set; }
+        public string OrderDate { get; set; }
         public int OrderID { get; set; }
-        public DateTime ShipDate { get; set; }
+        public string ShipDate { get; set; }
         public int UnitsSold { get; set; }
         public double UnitPrice { get; set; }
         public double UnitCost { get; set; }

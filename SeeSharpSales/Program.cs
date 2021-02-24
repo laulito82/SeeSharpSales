@@ -6,7 +6,7 @@ using CsvHelper;
 
 namespace SeeSharpSales
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -19,79 +19,36 @@ namespace SeeSharpSales
             Console.WriteLine("SSSS  EEE  EEE  SSSS   H   H  A  A  R   R  P");
             Console.WriteLine("project See Sharp Sales");
             Console.WriteLine("push ENTER to continue...");
-            Console.ReadLine();
+            
+            
+            
+            
+            string region = Console.ReadLine();
+      
+            string filepath = @"c:/temp/salesRecords.csv"; //denne skal tastes inn av bruker
 
-            var listSalesRecords = new List<SalesRecord>(); 
+            ReadFile(filepath); // LA DENNE STÅ - meny kommer før denne :)
+
             
 
-            string filepath = @"c:/temp/SalesRecords.csv"; //denne skal tastes inn av bruker
-            ReadFile(filepath, listSalesRecords);
-            //ReadFileRaul(filepath, listSalesRecords);
+            Console.WriteLine($"Rauls baby TotalSold = {SalesRecordsList.TotalSold()} "); 
 
-            int countFound = ListRegion(listSalesRecords, "Europe"); //Skal seff ikke være hardkodet 
+          
+         /*
+            int countFound = ListRegion(SaleRecList, "Europe"); //Skal seff ikke være hardkodet 
             Console.WriteLine($"Europe was found in {countFound} rows");
 
-            int countSold = TotalSold(listSalesRecords); //Raul: her regner den sammen totalt antall solgte enheter
-            Console.WriteLine($"We have sold a total of {countSold} items!! KA-CHING!!");
-
-            int countSoldRegion = TotalSoldPerRegion(listSalesRecords, "Europe"); //Raul: denne luringen skal vise deg solgt per region - men vi må få en variabel for region.
-            Console.WriteLine($"We have sold a totalt of {countSoldRegion} units in Europe");
-
+         */   
+            //int countSoldRegion = TotalSoldPerRegion(SaleRecList, "Europe"); //Raul: denne luringen skal vise deg solgt per region - men vi må få en variabel for region.
+            //Console.WriteLine($"We have sold a totalt of {countSoldRegion} units in Europe");
+        
         }
 
-        private static int ListRegion(List<SalesRecord> listSalesRecords, string region)
-        {
-            int countRegion = 0;
-            int countAll = 0;
-            foreach (SalesRecord sr in listSalesRecords)
-            {
-                
-                if (sr.isRegion(region))
-                {
-                    countRegion++;
-                    Console.WriteLine($"{sr.Region} {sr.OrderID}");
-                }
-                countAll++;
-                
-            }
-            return countRegion;
-        }
+        private static readonly SalesRecordsList SalesRecordsList = new SalesRecordsList();
 
-        private static int TotalSold(List<SalesRecord> listSalesRecords)
-        {
-            int sumSales = 0;
-            int countAll = 0;
-            foreach (SalesRecord sr in listSalesRecords)
-            {
-                if (sr.isUnitsSold())
-                {
-                    sumSales += sr.UnitsSold;
-                    Console.WriteLine($"{sr.UnitsSold} accumulated to {sumSales}");
-                }
-                countAll++;
-            }
-            return sumSales;
+      
 
-        }
-
-        private static int TotalSoldPerRegion(List<SalesRecord> listSalesRecords, string region)
-        {
-            int sumSales = 0;
-            int countAll = 0;
-            foreach (SalesRecord sr in listSalesRecords)
-            {
-                if (sr.isRegion(region))
-                {
-                    sumSales += sr.UnitsSold;
-                    Console.WriteLine($"{sr.UnitsSold} accumulated to {sumSales} for {region}"); // HER klarer den å hente string region, men ikke oppe i main. Fixable?
-                }
-                countAll++;
-
-            }
-            return sumSales;
-        }
-
-        static void ReadFile(string filepath, List<SalesRecord> listSalesRecords)
+        private static void ReadFile(string filepath)
         {
             bool firstLine = true;
             string line;
@@ -107,7 +64,7 @@ namespace SeeSharpSales
                     }
                     else
                     {
-                        makeSalesRecord(line, listSalesRecords);
+                        makeSalesRecord(line);
                     }
 
                 }
@@ -119,7 +76,7 @@ namespace SeeSharpSales
             }
         }
         
-        static void makeSalesRecord(string line, List<SalesRecord> listSalesRecords) 
+        static void makeSalesRecord(string line) 
         {
             SalesRecord salesRecord = new SalesRecord();
 
@@ -140,7 +97,7 @@ namespace SeeSharpSales
             salesRecord.TotalCost = Convert.ToDouble(subs[12].Replace(".", ","));
             salesRecord.TotalProfit = Convert.ToDouble(subs[13].Replace(".", ","));
 
-            listSalesRecords.Add(salesRecord);
+            SalesRecordsList.SalesRecords.Add(salesRecord);
         }
 
         static string[] SplitLine(string line)
@@ -149,7 +106,7 @@ namespace SeeSharpSales
             return subs;   
         }
 
-        static void ReadFileRaul(string filepath, List<SalesRecord> listSalesRecords)
+        static void ReadFileRaul(string filepath)
         {
             using var streamReader = new StreamReader($"{filepath}");
             using var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture);
@@ -222,7 +179,7 @@ namespace SeeSharpSales
 
 
                     }
-                    listSalesRecords.Add(salesRecord);
+                    SalesRecordsList.SalesRecords.Add(salesRecord);
 
                     
                 }

@@ -18,7 +18,7 @@ namespace SeeSharpSales
     #endregion
 
 
-    public class SalesRecord
+    public class SalesRecord 
     {
 
 
@@ -96,41 +96,14 @@ namespace SeeSharpSales
             return $"{Region}, country: {Country}, price: {UnitPrice:c}, units sold: {UnitsSold}, total profit: {TotalProfit}";
         }
 
-        
+        /*
         public void TotalSold(int numberOfSoldItems)
         {
             UnitsSold += numberOfSoldItems;
             //https://stackoverflow.com/questions/2419343/how-to-sum-up-an-array-of-integers-in-c-sharp
         }
-
-        //prøver meg på totalsum, men får det ikke helt til :-(
-        //utgangspunkt:
-        //int[] array = { 1, 2, 3, 4, 5 };
-        //int sum = array.Sum();
-        //Console.WriteLine(sum);
-
-
-        /*
-        public int totalUnitsSold(int totalSales)
-        {
-            //return totalSales = UnitsSold.Sum();
-            foreach(totalSales in UnitsSold)
-            {
-                sum += totalS;
-            }
-        }
-        
-        foreach (var sold in  )
-
-        {
-        var numbers = new List<int> { 2, 3, 4, 5, 6 };
-
-        int sum = 0;
-
-        sum = numbers.Sum();
-            Console.WriteLine(sum);
-        }
         */
+        
 
     }
 }

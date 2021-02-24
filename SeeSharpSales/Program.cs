@@ -10,7 +10,14 @@ namespace SeeSharpSales
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to project See Sharp Sales");
+            Console.WriteLine("Welcome to");
+            Console.WriteLine("project");
+            Console.WriteLine(" SSSS EEE  EEE   SSSS  H   H   A    RRR    PPP");
+            Console.WriteLine("S     E    E    S      H   H  A  A  R  R   P   P");
+            Console.WriteLine(" SSS  EE   EE    SSS   HHHHH  AAAA  RRR    PPP");
+            Console.WriteLine("    S E    E        S  H   H  A  A  R  R   P");
+            Console.WriteLine("SSSS  EEE  EEE  SSSS   H   H  A  A  R   R  P");
+            Console.WriteLine("project See Sharp Sales");
 
             var listSalesRecords = new List<SalesRecord>(); 
             

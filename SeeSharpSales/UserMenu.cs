@@ -27,24 +27,19 @@ namespace SeeSharpSales
 
             Console.ResetColor();
 
-
             Console.WriteLine("\nTheese are your options:");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n press 1 to say hello");
-            Console.ResetColor();
+            Console.WriteLine("\n Press 1 to print report");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n press 2 to *second option*");
-            Console.ResetColor();
+            Console.WriteLine("\n Press 2 to se possible calculations");
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n press 3 to *third option*");
-            Console.ResetColor();
+            Console.WriteLine("\n Press 3 write to different fileformat");
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
+
             Console.WriteLine("\n-------------------------------------------");
+
             Console.ResetColor();
         }
 

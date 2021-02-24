@@ -6,14 +6,20 @@ namespace SeeSharpSales
 {
     public class UserMenu
     {
+        public static string filepath;
+
         public static string ChooseFileToAnalyse()
         {
             Console.WriteLine("Welcome to SeeSharpSale, your trusted salesrecordsanalyser! \nTo get started, type in the path to the file you want to analyse");
-            string filepath = Console.ReadLine();
+            filepath = Console.ReadLine();
 
             //to be done check if the filename is valid and if it is reurn the  filepath so we can use it in main
             return filepath;
         }
+
+        //kodebit for å bruke i main i stede for @blablabal:
+        //ReadFile(UserMenu.filepath, listSalesRecords);
+       
 
         public static void DisplayMenu()
         {

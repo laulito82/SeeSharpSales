@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using CsvHelper;
@@ -108,6 +107,31 @@ namespace SeeSharpSales
             string[] subs = line.Split(',');
             return subs;   
         }
+
+        private void WriteFile(string path)
+        {
+            if (path == "")
+                path = @"C:\json.txt";
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+
+                }
+            }
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                
+            }
+        }
+
+        /*
+        private string BuildJSON()
+        {
+            SalesRecordsList.
+        }
+        */
 
         static void ReadFileRaul(string filepath)
         {

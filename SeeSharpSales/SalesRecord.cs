@@ -37,6 +37,7 @@ namespace SeeSharpSales
         public double TotalCost { get; set; }
         public double TotalProfit { get; set; }
 
+        private const double SALES_TAX_RATE = 0.30;
 
         public SalesRecord()
         {
@@ -65,6 +66,16 @@ namespace SeeSharpSales
                 return true;
 
             return false;
+        }
+
+        public double GetSalesTax()
+        {
+            return UnitPrice * SALES_TAX_RATE;
+        }
+
+        public override string ToString()
+        {
+            return $"{Region}, country: {Country}, price: {UnitPrice:c}, units sold: {UnitsSold}, total profit: {TotalProfit}";
         }
 
         /*

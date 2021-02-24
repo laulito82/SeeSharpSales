@@ -82,6 +82,7 @@ namespace SeeSharpSales
                 if (sr.isRegion(region))
                 {
                     sumSales += sr.UnitsSold;
+                    Console.WriteLine($"{sr.UnitsSold} accumulated to {sumSales} for {region}"); // HER klarer den å hente string region, men ikke oppe i main. Fixable?
                 }
                 countAll++;
 

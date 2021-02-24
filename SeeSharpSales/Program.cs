@@ -9,32 +9,44 @@ namespace SeeSharpSales
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to");
-            Console.WriteLine("project");
-            Console.WriteLine(" SSSS EEE  EEE   SSSS  H   H   A    RRR    PPP");
-            Console.WriteLine("S     E    E    S      H   H  A  A  R  R   P   P");
-            Console.WriteLine(" SSS  EE   EE    SSS   HHHHH  AAAA  RRR    PPP");
-            Console.WriteLine("    S E    E        S  H   H  A  A  R  R   P");
-            Console.WriteLine("SSSS  EEE  EEE  SSSS   H   H  A  A  R   R  P");
-            Console.WriteLine("project See Sharp Sales");
-            Console.WriteLine("push ENTER to continue...");
-            
-            
-            
-            
-            string region = Console.ReadLine();
-      
-            string filepath = @"c:/temp/salesRecords.csv"; //denne skal tastes inn av bruker
+            UserMenu.ChooseFileToAnalyse();
+            //string filepath = @"c:/temp/salesRecords.csv"; denne skal tastes inn av bruker
 
-            ReadFile(filepath); // LA DENNE STÅ - meny kommer før denne :)
+            bool exit = false;
+            do
+            {
+                UserMenu.DisplayMenu();
+                int selectionOption = UserMenu.GetUserInput();
+                UserMenu.RunMenuOption(selectionOption);
 
+                Console.WriteLine("Do you want to see the menu again? press y for yes and n for no");
+                char answer = char.Parse(Console.ReadLine());
+
+                if (answer == 'y')
+                {
+                    exit = false;
+                }
+
+                else
+                {
+                    exit = true;
+                }
+
+                Console.Clear();
+
+            } while (!exit);
             
 
+            ReadFile(UserMenu.filepath); // LA DENNE STÅ - meny kommer før denne :)
+
+            
+            
             Console.WriteLine($"Rauls baby TotalSold = {SalesRecordsList.TotalSold()} ");
             Console.WriteLine($"Total sales Asia: {SalesRecordsList.TotalSoldPerRegion("Asia")}");
             Console.WriteLine($"Total sales Europe: {SalesRecordsList.TotalSoldPerRegion("Europe")}");
             Console.WriteLine($"Total sales Sub-Saharan Africa: {SalesRecordsList.TotalSoldPerRegion("Sub-Saharan Africa")}");
             Console.WriteLine($"Rauls baby TotalProfit = {SalesRecordsList.TotalProfit():c} ");
+            
 
             /*
                int countFound = ListRegion(SaleRecList, "Europe"); //Skal seff ikke være hardkodet 

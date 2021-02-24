@@ -10,7 +10,12 @@ namespace SeeSharpSales
        
         public static string ChooseFileToAnalyse()
         {
-            Console.WriteLine("Welcome to SeeSharpSale, your trusted salesrecordsanalyser! \nTo get started, type in the path to the file you want to analyse");
+            Console.WriteLine(" SSSS EEE  EEE   SSSS  H   H   A    RRR    PPP");
+            Console.WriteLine("S     E    E    S      H   H  A  A  R  R   P   P");
+            Console.WriteLine(" SSS  EE   EE    SSS   HHHHH  AAAA  RRR    PPP");
+            Console.WriteLine("    S E    E        S  H   H  A  A  R  R   P");
+            Console.WriteLine("SSSS  EEE  EEE  SSSS   H   H  A  A  R   R  P");
+            Console.WriteLine("\nTo get started, type in the path to the file you want to analyse");
             filepath = Console.ReadLine();
             return filepath;
         }
@@ -44,7 +49,7 @@ namespace SeeSharpSales
             Console.BackgroundColor = ConsoleColor.White;
 
             Console.WriteLine("-------------------------------------------");
-            Console.WriteLine("                  Menu                     ");
+            Console.WriteLine($" Menu for: {filepath}   ");
             Console.WriteLine("-------------------------------------------");
 
             Console.ResetColor();
@@ -53,7 +58,7 @@ namespace SeeSharpSales
 
             Console.WriteLine("\n Press 1 to print report");
 
-            Console.WriteLine("\n Press 2 to se possible calculations");
+            Console.WriteLine("\n Press 2 to se total sales in different regions");
 
             Console.WriteLine("\n Press 3 write to different fileformat");
 
@@ -93,9 +98,8 @@ namespace SeeSharpSales
                     FirstOptionForTest();
                     break;
 
-                case 2: 
-                    Console.Clear();
-                    Console.WriteLine("You choose 2");
+                case 2:
+                    TotalSalesInDifferentRegions();
                     break;
 
                 case 3:
@@ -111,8 +115,16 @@ namespace SeeSharpSales
             static void FirstOptionForTest()
             {
                 Console.Clear();
-                Console.WriteLine("Hei");
+                Console.WriteLine("Det Jeanette driver med? ");
             }
+
+            static void TotalSalesInDifferentRegions()
+            {
+                //ny menylinje med nye valg etterhvert
+                Console.Clear();
+                Console.WriteLine($"Det Raul lager");
+            }
+            
         }
     }
 }

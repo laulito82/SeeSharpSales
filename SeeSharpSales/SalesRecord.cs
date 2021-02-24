@@ -76,6 +76,16 @@ namespace SeeSharpSales
             return false;
         }
 
+        public bool isTotalProfit()
+        {
+            if (TotalProfit >= 0)
+                return true;
+            
+            return false;
+        }
+
+
+
         public double GetSalesTax()
         {
             return UnitPrice * SALES_TAX_RATE;

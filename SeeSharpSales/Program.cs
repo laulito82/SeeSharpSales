@@ -33,7 +33,8 @@ namespace SeeSharpSales
             int countSold = TotalSold(listSalesRecords); //Raul: her regner den sammen totalt antall solgte enheter
             Console.WriteLine($"We have sold a total of {countSold} items!! KA-CHING!!");
 
-
+            int countSoldRegion = TotalSoldPerRegion(listSalesRecords, "Europe"); //Raul: denne luringen skal vise deg solgt per region - men vi må få en variabel for region.
+            Console.WriteLine($"We have sold a totalt of {countSoldRegion} units in Europe");
 
         }
 
@@ -70,6 +71,22 @@ namespace SeeSharpSales
             }
             return sumSales;
 
+        }
+
+        private static int TotalSoldPerRegion(List<SalesRecord> listSalesRecords, string region)
+        {
+            int sumSales = 0;
+            int countAll = 0;
+            foreach (SalesRecord sr in listSalesRecords)
+            {
+                if (sr.isRegion(region))
+                {
+                    sumSales += sr.UnitsSold;
+                }
+                countAll++;
+
+            }
+            return sumSales;
         }
 
         static void ReadFile(string filepath, List<SalesRecord> listSalesRecords)

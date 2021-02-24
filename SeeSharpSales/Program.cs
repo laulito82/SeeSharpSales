@@ -18,6 +18,7 @@ namespace SeeSharpSales
             Console.WriteLine("    S E    E        S  H   H  A  A  R  R   P");
             Console.WriteLine("SSSS  EEE  EEE  SSSS   H   H  A  A  R   R  P");
             Console.WriteLine("project See Sharp Sales");
+            Console.ReadLine();
 
             var listSalesRecords = new List<SalesRecord>(); 
             

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using CsvHelper;
@@ -34,11 +33,7 @@ namespace SeeSharpSales
             Console.WriteLine($"Rauls baby TotalSold = {SalesRecordsList.TotalSold()} "); 
 
           
-         /*
-            int countFound = ListRegion(SaleRecList, "Europe"); //Skal seff ikke være hardkodet 
-            Console.WriteLine($"Europe was found in {countFound} rows");
-
-         */   
+         
             //int countSoldRegion = TotalSoldPerRegion(SaleRecList, "Europe"); //Raul: denne luringen skal vise deg solgt per region - men vi må få en variabel for region.
             //Console.WriteLine($"We have sold a totalt of {countSoldRegion} units in Europe");
         
@@ -105,6 +100,31 @@ namespace SeeSharpSales
             string[] subs = line.Split(',');
             return subs;   
         }
+
+        private void WriteFile(string path)
+        {
+            if (path == "")
+                path = @"C:\json.txt";
+
+            if (!File.Exists(path))
+            {
+                using (StreamWriter sw = File.CreateText(path))
+                {
+
+                }
+            }
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                
+            }
+        }
+
+        /*
+        private string BuildJSON()
+        {
+            SalesRecordsList.
+        }
+        */
 
         static void ReadFileRaul(string filepath)
         {

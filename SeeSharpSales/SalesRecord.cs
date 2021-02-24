@@ -78,6 +78,13 @@ namespace SeeSharpSales
             return $"{Region}, country: {Country}, price: {UnitPrice:c}, units sold: {UnitsSold}, total profit: {TotalProfit}";
         }
 
+        
+        public void TotalSold(int numberOfSoldItems)
+        {
+            UnitsSold += numberOfSoldItems;
+            //https://stackoverflow.com/questions/2419343/how-to-sum-up-an-array-of-integers-in-c-sharp
+        }
+
         /*
         public int totalUnitsSold(int totalSales)
         {

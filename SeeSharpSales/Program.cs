@@ -27,7 +27,7 @@ namespace SeeSharpSales
             } while (!exit);
             
 
-            ReadFile(UserMenu.filepath); // LA DENNE STÅ - meny kommer før denne :)
+            ReadFile(UserMenu.filepath); 
 
             
             
@@ -38,13 +38,9 @@ namespace SeeSharpSales
             Console.WriteLine($"Rauls baby TotalProfit = {SalesRecordsList.TotalProfit():c} ");
             
 
-            /*
-               int countFound = ListRegion(SaleRecList, "Europe"); //Skal seff ikke være hardkodet 
-               Console.WriteLine($"Europe was found in {countFound} rows");
+            
 
-            */
-            //int countSoldRegion = TotalSoldPerRegion(SaleRecList, "Europe"); //Raul: denne luringen skal vise deg solgt per region - men vi må få en variabel for region.
-            //Console.WriteLine($"We have sold a totalt of {countSoldRegion} units in Europe");
+           
 
         }
 
@@ -110,30 +106,17 @@ namespace SeeSharpSales
             return subs;   
         }
 
-        private void WriteFile(string path)
+        private static void WriteJsonFile(string path, SalesRecordsList srListToConvert)
         {
             if (path == "")
-                path = @"C:\json.txt";
+                path = @"C:\temp\json.txt";
 
-            if (!File.Exists(path))
+            using (StreamWriter sw = new StreamWriter(path, false))
             {
-                using (StreamWriter sw = File.CreateText(path))
-                {
-
-                }
+                sw.Write(srListToConvert.GetJsonString());
             }
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                
-            }
-        }
 
-        /*
-        private string BuildJSON()
-        {
-            SalesRecordsList.
         }
-        */
 
         static void ReadFileRaul(string filepath)
         {

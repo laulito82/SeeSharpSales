@@ -14,7 +14,7 @@ namespace SeeSharpSales
             SalesRecords = new List<SalesRecord>();
         }
 
-        public string GetJasonString()
+        public string GetJsonString()
         {
             return JsonConvert.SerializeObject(SalesRecords.ToArray());
         }

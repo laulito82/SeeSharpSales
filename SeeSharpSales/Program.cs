@@ -58,6 +58,7 @@ namespace SeeSharpSales
                     break;
                 case 3:
                     Console.Clear();
+                    Console.WriteLine("Order ID to search for: ");
                     Console.WriteLine(SalesRecordsList.SearchByOrderID(Convert.ToInt32(Console.ReadLine())));
                     break;
                 case 4:

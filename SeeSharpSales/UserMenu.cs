@@ -120,17 +120,20 @@ namespace SeeSharpSales
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Do you want to see the menu again? press y for yes and n to exit");
-            char answer = char.Parse(Console.ReadLine());
-
-            if (answer == 'y')
+            try
             {
-                exit = false;
+                char answer = char.Parse(Console.ReadLine());
+            
+                if (answer == 'y')
+                {
+                    exit = false;
+                }
+                else
+                {
+                    exit = true;
+                }
             }
-
-            else
-            {
-                exit = true;
-            }
+            catch { }
 
             Console.Clear();
 

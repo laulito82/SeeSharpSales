@@ -45,6 +45,16 @@ namespace SeeSharpSales
             return searchResults;
         }
 
+        public SalesRecord SearchByOrderID (int orderID)
+        {
+            foreach (SalesRecord sr in SalesRecords)
+            {
+                if (sr.OrderID == orderID)
+                    return sr;
+            }
+
+            return null;
+        }
 
         public int CountThisRegion(string region)
         {

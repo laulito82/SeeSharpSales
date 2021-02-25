@@ -52,28 +52,21 @@ namespace SeeSharpSales
                     Console.Clear();
                     Console.WriteLine("Country to search for: ");
                     string country = Console.ReadLine();
-                    Console.WriteLine("Item Type : ");
+                    Console.WriteLine("Item Type *optional* : ");
                     string itemType = Console.ReadLine();
                     DisplayOnScreen(SalesRecordsList.SerchForCountryAndOptionalItemType(country, itemType));
                     break;
                 case 3:
                     Console.Clear();
-                    DisplayOnScreen(SalesRecordsList.SalesRecords);
+                    Console.WriteLine(SalesRecordsList.SearchByOrderID(Convert.ToInt32(Console.ReadLine())));
                     break;
                 case 4:
                     Console.Clear();
-                    DisplayOnScreen(SalesRecordsList.SalesRecords);
+                    
                     break;
-
-
-
-
-
-
                 case 5:
                     TotalSalesInDifferentRegions();
                     break;
-
                 case 6:
                     Console.Clear();
                     Console.WriteLine(SalesRecordsList.GetJsonString());

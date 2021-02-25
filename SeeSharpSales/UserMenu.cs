@@ -5,7 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace SeeSharpSales
 {
-    public class UserMenu
+    public class UserMenu 
     {
         public static string filepath;
        
@@ -79,7 +79,7 @@ namespace SeeSharpSales
 
             Console.WriteLine("\n Press 1 to display file");
             Console.WriteLine("\n Press 2 to Search for Country and Item Type");
-            Console.WriteLine("\n Press 3 to ");
+            Console.WriteLine("\n Press 3 to search for Order ID");
             Console.WriteLine("\n Press 4 to ");
             
             Console.WriteLine("\n Press 5 to se total sales in different regions");
@@ -117,6 +117,8 @@ namespace SeeSharpSales
 
         public static void ExitOrRunNew()
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Do you want to see the menu again? press y for yes and n to exit");
             char answer = char.Parse(Console.ReadLine());
 

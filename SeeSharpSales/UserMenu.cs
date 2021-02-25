@@ -34,7 +34,7 @@ namespace SeeSharpSales
         
         public enum FileType { csv = 1, xml = 2, json = 3 }
         
-        // Det jeg prøver åpå er å gå gjennom enums som jeg har laget og for hver av de skal det sjekkes om filepath ender med en av enumene 
+        
         public static void CheckIfFileIsValid()
         {
             var types = Enum.GetValues(typeof(FileType)) as FileType[];
@@ -43,8 +43,6 @@ namespace SeeSharpSales
             {
                 if (filepath.EndsWith(type.ToString()))
                 {
-                    Console.WriteLine($" You entered {filepath}. This file is good to go. Press enter to continue.");
-                    Console.ReadLine();
                     break;
                 }
                 else
@@ -79,11 +77,14 @@ namespace SeeSharpSales
             Console.WriteLine("\n Theese are your options:");
             Console.ResetColor();
 
-            Console.WriteLine("\n Press 1 to print to json format");
+            Console.WriteLine("\n Press 1 to display file");
+            Console.WriteLine("\n Press 2 to ");
+            Console.WriteLine("\n Press 3 to ");
+            Console.WriteLine("\n Press 4 to ");
+            
+            Console.WriteLine("\n Press 5 to se total sales in different regions");
 
-            Console.WriteLine("\n Press 2 to se total sales in different regions");
-
-            Console.WriteLine("\n Press 3 write to different fileformat");
+            Console.WriteLine("\n Press 6 to export file in JSON format");
 
 
             Console.ForegroundColor = ConsoleColor.Black;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using CsvHelper;
@@ -13,8 +14,7 @@ namespace SeeSharpSales
             
             UserMenu.CheckIfFileIsValid();
 
-
-            //string filepath = @"c:/temp/salesRecords.csv"; denne skal tastes inn av bruker
+            ReadFile(UserMenu.filepath);
 
             bool exit = false;
             do
@@ -27,7 +27,7 @@ namespace SeeSharpSales
             } while (!exit);
             
 
-            ReadFile(UserMenu.filepath); 
+            
 
             
             
@@ -48,17 +48,34 @@ namespace SeeSharpSales
 
                 case 1:
                     Console.Clear();
-                    WriteJsonFile("", SalesRecordsList);
-                    Console.WriteLine("\nStored as json in C.\n");
+                    DisplayOnScreen(SalesRecordsList.SalesRecords);
+                    break;
+                case 2:
+                    Console.Clear();
+                    DisplayOnScreen(SalesRecordsList.SalesRecords);
+                    break;
+                case 3:
+                    Console.Clear();
+                    DisplayOnScreen(SalesRecordsList.SalesRecords);
+                    break;
+                case 4:
+                    Console.Clear();
+                    DisplayOnScreen(SalesRecordsList.SalesRecords);
                     break;
 
-                case 2:
+
+
+
+
+
+                case 5:
                     TotalSalesInDifferentRegions();
                     break;
 
-                case 3:
+                case 6:
                     Console.Clear();
-                    Console.WriteLine("You choose 3");
+                    WriteJsonFile("", SalesRecordsList);
+                    Console.WriteLine("\nStored as json in C.\n");
                     break;
 
 
@@ -81,7 +98,13 @@ namespace SeeSharpSales
 
         private static readonly SalesRecordsList SalesRecordsList = new SalesRecordsList();
 
-      
+        private static void DisplayOnScreen(List<SalesRecord> salesRecords)
+        {
+            foreach(SalesRecord sr in salesRecords)
+            {
+                Console.WriteLine(sr);
+            }
+        }
 
         private static void ReadFile(string filepath)
         {

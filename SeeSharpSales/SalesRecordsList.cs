@@ -79,6 +79,23 @@ namespace SeeSharpSales
             return countRegion;
         }
 
+        public static void GlobalSalesList()
+        {
+            List<SalesRecord> SalesRecords = new List<SalesRecord>();
+            //SalesRecords.Add(new SalesRecord());
+
+            Console.WriteLine("-------------------------------------------------------");
+            Console.WriteLine("OrderID:\tOrdered:\tto:\tShipped:\tPriority:\tCategory");
+            Console.WriteLine("-------------------------------------------------------");
+            foreach (SalesRecord sr in SalesRecords)
+            {
+                Console.WriteLine(sr.SalesDetails());
+            }
+            Console.WriteLine("-------------------------------------------------------");
+        }
+
+
+
         //public int RegionList(string region)
         //{
         //    int countRegion = 0;

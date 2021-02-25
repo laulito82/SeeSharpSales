@@ -93,8 +93,10 @@ namespace SeeSharpSales
 
         public override string ToString()
         {
-            return $"{Region}, country: {Country}, price: {UnitPrice:c}, units sold: {UnitsSold}, total profit: {TotalProfit}";
+            return $"OrderID: {OrderID} Region: {Region}, country: {Country}, price: {UnitPrice:c}, units sold: {UnitsSold}, total profit: {TotalProfit}";
         }
+
+        public string SalesDetails() => $"{OrderID}\t {OrderDate}\t{Country}\t{ShipDate}\t{OrderPriority} \t{ItemType},  ";
 
         /*
         public void TotalSold(int numberOfSoldItems)
@@ -103,7 +105,7 @@ namespace SeeSharpSales
             //https://stackoverflow.com/questions/2419343/how-to-sum-up-an-array-of-integers-in-c-sharp
         }
         */
-        
+
 
     }
 }

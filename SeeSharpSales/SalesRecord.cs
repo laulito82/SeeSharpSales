@@ -4,7 +4,7 @@ using System.Linq;
 namespace SeeSharpSales
 {
    
-    public class SalesRecord 
+    public class SalesRecord : ISeeSharpSales
     {
 
         public string Region { get; set; }

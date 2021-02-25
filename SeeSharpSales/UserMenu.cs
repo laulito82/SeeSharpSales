@@ -78,13 +78,13 @@ namespace SeeSharpSales
             Console.ResetColor();
 
             Console.WriteLine("\n Press 1 to display file");
-            Console.WriteLine("\n Press 2 to ");
+            Console.WriteLine("\n Press 2 to Search for Country and Item Type");
             Console.WriteLine("\n Press 3 to ");
             Console.WriteLine("\n Press 4 to ");
             
             Console.WriteLine("\n Press 5 to se total sales in different regions");
 
-            Console.WriteLine("\n Press 6 to export file in JSON format");
+            Console.WriteLine("\n Press 6 to display and export file in JSON format");
 
 
             Console.ForegroundColor = ConsoleColor.Black;

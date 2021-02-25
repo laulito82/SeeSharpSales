@@ -23,21 +23,21 @@ namespace SeeSharpSales
         {
             List<SalesRecord> searchResults = new List<SalesRecord>();
 
-            bool itemTypeInInput = false;
+            bool itemTypeInInput = true;
 
-            if (itemType != null && itemType != "")
-                itemTypeInInput = true;
+            if ( itemType == "")
+                itemTypeInInput = false;
 
             foreach (SalesRecord sr in SalesRecords)
             {
                 if (itemTypeInInput == true)
                 {
-                    if (sr.Country == country && sr.ItemType == itemType)
+                    if (sr.Country.ToUpper() == country.ToUpper() && sr.ItemType.ToUpper() == itemType.ToUpper())
                             searchResults.Add(sr);
                 }
                 else
                 {
-                    if (sr.Country == country)
+                    if (sr.Country.ToUpper() == country.ToUpper())
                         searchResults.Add(sr);
                 }
             }

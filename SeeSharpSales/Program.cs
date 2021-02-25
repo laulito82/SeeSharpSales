@@ -42,17 +42,19 @@ namespace SeeSharpSales
         public static void RunMenuOption(int selectedOption)
         {
 
-
             switch (selectedOption)
             {
-
                 case 1:
                     Console.Clear();
                     DisplayOnScreen(SalesRecordsList.SalesRecords);
                     break;
                 case 2:
                     Console.Clear();
-                    DisplayOnScreen(SalesRecordsList.SalesRecords);
+                    Console.WriteLine("Country to search for: ");
+                    string country = Console.ReadLine();
+                    Console.WriteLine("Item Type : ");
+                    string itemType = Console.ReadLine();
+                    DisplayOnScreen(SalesRecordsList.SerchForCountryAndOptionalItemType(country, itemType));
                     break;
                 case 3:
                     Console.Clear();
@@ -74,6 +76,7 @@ namespace SeeSharpSales
 
                 case 6:
                     Console.Clear();
+                    Console.WriteLine(SalesRecordsList.GetJsonString());
                     WriteJsonFile("", SalesRecordsList);
                     Console.WriteLine("\nStored as json in C.\n");
                     break;

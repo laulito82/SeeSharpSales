@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,6 +14,10 @@ namespace SeeSharpSales
             SalesRecords = new List<SalesRecord>();
         }
 
+        public string GetJasonString()
+        {
+            return JsonConvert.SerializeObject(SalesRecords.ToArray());
+        }
         public int CountThisRegion(string region)
         {
             int counter = 0;

@@ -11,8 +11,7 @@ namespace SeeSharpSales
         {
             UserMenu.ChooseFileToAnalyse();
             
-            //Fikk ikke denne til å funke akkurat som planlagt. Jobber med den nå. Ønsker å ha det som en sparat funksjon pga interfacet, så ikke en del av ChooseFile:)
-            // UserMenu.CheckIfFileIsValid();
+            UserMenu.CheckIfFileIsValid();
 
 
             //string filepath = @"c:/temp/salesRecords.csv"; denne skal tastes inn av bruker

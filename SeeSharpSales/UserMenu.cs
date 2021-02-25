@@ -23,9 +23,8 @@ namespace SeeSharpSales
 
        
 
-        //This func in main instead? 
+        
         public enum FileType { csv = 1, xml = 2, json = 3 }
-
         
         // Det jeg prøver åpå er å gå gjennom enums som jeg har laget og for hver av de skal det sjekkes om filepath ender med en av enumene 
         public static void CheckIfFileIsValid()
@@ -40,9 +39,13 @@ namespace SeeSharpSales
                     Console.ReadLine();
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("Invalid filename. Press enter to exit and try again");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                }
             }
-
-            Console.WriteLine("Invalid filename");
         }
         
         
@@ -68,7 +71,6 @@ namespace SeeSharpSales
 
             Console.WriteLine("\n Press 3 write to different fileformat");
 
-            Console.WriteLine("\n Press 4 to choose a different file");
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
@@ -115,9 +117,6 @@ namespace SeeSharpSales
                     Console.WriteLine("You choose 3");
                     break;
 
-                case 4:
-                    Restart();
-                    break;
 
                 default:
                     DisplayMenu();
@@ -135,12 +134,6 @@ namespace SeeSharpSales
                 //ny menylinje med nye valg etterhvert
                 Console.Clear();
                 Console.WriteLine($"Det Raul lager");
-            }
-
-            static void Restart()
-            {
-                Console.Clear();
-                ChooseFileToAnalyse();
             }
 
             

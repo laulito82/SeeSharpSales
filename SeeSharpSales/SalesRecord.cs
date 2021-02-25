@@ -3,24 +3,9 @@ using System.Linq;
 
 namespace SeeSharpSales
 {
-    #region enums
-    
-    public enum SalesChannel
-    {
-        Online, Offline
-    }
-
-    public enum OrderPriority
-    {
-        C, H, L, M
-    }
-    
-    #endregion
-
-
+   
     public class SalesRecord 
     {
-
 
         public string Region { get; set; }
         public string Country { get; set; }
@@ -42,6 +27,37 @@ namespace SeeSharpSales
         public SalesRecord()
         {
 
+        }
+
+        public SalesRecord(string region, 
+                           string country, 
+                           string itemType, 
+                           string salesChannel, 
+                           string orderPriority, 
+                           string orderDate, 
+                           int orderID, 
+                           string shipDate, 
+                           int unitsSold, 
+                           double unitPrice, 
+                           double unitCost, 
+                           double totalRevenue, 
+                           double totalCost, 
+                           double totalProfit)
+        {
+            Region = region;
+            Country = country;
+            ItemType = itemType;
+            SalesChannel = salesChannel;
+            OrderPriority = orderPriority;
+            OrderDate = orderDate;
+            OrderID = orderID;
+            ShipDate = shipDate;
+            UnitsSold = unitsSold;
+            UnitPrice = unitPrice;
+            UnitCost = unitCost;
+            TotalRevenue = totalRevenue;
+            TotalCost = totalCost;
+            TotalProfit = totalProfit;
         }
 
         public bool isRegion(string regionInn)

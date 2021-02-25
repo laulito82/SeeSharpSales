@@ -18,6 +18,34 @@ namespace SeeSharpSales
         {
             return JsonConvert.SerializeObject(SalesRecords.ToArray());
         }
+
+        public List<SalesRecord> SerchForCountryAndOptionalItemType(string country, string itemType)
+        {
+            List<SalesRecord> searchResults = new List<SalesRecord>();
+
+            bool itemTypeInInput = false;
+
+            if (itemType != null && itemType != "")
+                itemTypeInInput = true;
+
+            foreach (SalesRecord sr in SalesRecords)
+            {
+                if (itemTypeInInput == true)
+                {
+                    if (sr.Country == country && sr.ItemType == itemType)
+                            searchResults.Add(sr);
+                }
+                else
+                {
+                    if (sr.Country == country)
+                        searchResults.Add(sr);
+                }
+            }
+
+            return searchResults;
+        }
+
+
         public int CountThisRegion(string region)
         {
             int counter = 0;

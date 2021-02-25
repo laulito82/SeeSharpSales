@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SeeSharpSales
 {
@@ -20,12 +21,13 @@ namespace SeeSharpSales
             return filepath;
         }
 
-        //kodebit for å bruke i main i stede for @blablabal:
-        //ReadFile(UserMenu.filepath, listSalesRecords);
+       
 
-        //This func should be in main. Because of inheritance and because break should not be just break but a command to run the file.
-        public enum FileType { none = 0, csv = 1, xml = 2, json = 3 }
+        //This func in main instead? 
+        public enum FileType { csv = 1, xml = 2, json = 3 }
 
+        
+        // Det jeg prøver åpå er å gå gjennom enums som jeg har laget og for hver av de skal det sjekkes om filepath ender med en av enumene 
         public static void CheckIfFileIsValid()
         {
             var types = Enum.GetValues(typeof(FileType)) as FileType[];
@@ -34,12 +36,16 @@ namespace SeeSharpSales
             {
                 if (filepath.EndsWith(type.ToString()))
                 {
+                    Console.WriteLine($" You entered {filepath}. This file is good to go. Press enter to continue.");
+                    Console.ReadLine();
                     break;
                 }
             }
 
             Console.WriteLine("Invalid filename");
         }
+        
+        
        
 
         public static void DisplayMenu()
@@ -61,6 +67,8 @@ namespace SeeSharpSales
             Console.WriteLine("\n Press 2 to se total sales in different regions");
 
             Console.WriteLine("\n Press 3 write to different fileformat");
+
+            Console.WriteLine("\n Press 4 to choose a different file");
 
             Console.ForegroundColor = ConsoleColor.Black;
             Console.BackgroundColor = ConsoleColor.White;
@@ -107,6 +115,10 @@ namespace SeeSharpSales
                     Console.WriteLine("You choose 3");
                     break;
 
+                case 4:
+                    Restart();
+                    break;
+
                 default:
                     DisplayMenu();
                     break;
@@ -124,7 +136,35 @@ namespace SeeSharpSales
                 Console.Clear();
                 Console.WriteLine($"Det Raul lager");
             }
+
+            static void Restart()
+            {
+                Console.Clear();
+                ChooseFileToAnalyse();
+            }
+
             
+        }
+
+        public static bool exit;
+
+        public static void ExitOrRunNew()
+        {
+            Console.WriteLine("Do you want to see the menu again? press y for yes and n for no");
+            char answer = char.Parse(Console.ReadLine());
+
+            if (answer == 'y')
+            {
+                exit = false;
+            }
+
+            else
+            {
+                exit = true;
+            }
+
+            Console.Clear();
+
         }
     }
 }

@@ -10,6 +10,11 @@ namespace SeeSharpSales
         static void Main(string[] args)
         {
             UserMenu.ChooseFileToAnalyse();
+            
+            //Fikk ikke denne til å funke akkurat som planlagt. Jobber med den nå. Ønsker å ha det som en sparat funksjon pga interfacet, så ikke en del av ChooseFile:)
+            // UserMenu.CheckIfFileIsValid();
+
+
             //string filepath = @"c:/temp/salesRecords.csv"; denne skal tastes inn av bruker
 
             bool exit = false;
@@ -18,21 +23,7 @@ namespace SeeSharpSales
                 UserMenu.DisplayMenu();
                 int selectionOption = UserMenu.GetUserInput();
                 UserMenu.RunMenuOption(selectionOption);
-
-                Console.WriteLine("Do you want to see the menu again? press y for yes and n for no");
-                char answer = char.Parse(Console.ReadLine());
-
-                if (answer == 'y')
-                {
-                    exit = false;
-                }
-
-                else
-                {
-                    exit = true;
-                }
-
-                Console.Clear();
+                UserMenu.ExitOrRunNew();
 
             } while (!exit);
             

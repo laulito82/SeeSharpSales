@@ -11,11 +11,19 @@ namespace SeeSharpSales
        
         public static string ChooseFileToAnalyse()
         {
-            Console.WriteLine(" SSSS EEE  EEE   SSSS  H   H   A    RRR    PPP");
-            Console.WriteLine("S     E    E    S      H   H  A  A  R  R   P   P");
-            Console.WriteLine(" SSS  EE   EE    SSS   HHHHH  AAAA  RRR    PPP");
-            Console.WriteLine("    S E    E        S  H   H  A  A  R  R   P");
-            Console.WriteLine("SSSS  EEE  EEE  SSSS   H   H  A  A  R   R  P");
+            Console.WriteLine(@"                                             Welcome to
+            ____________________________       ______________  _________ ________ ________ 
+            __  ___/___  ____/___  ____/       __  ___/___  / / /___    |___  __ \___  __ \
+            _____ \ __  __/   __  __/          _____ \ __  /_/ / __  /| |__  /_/ /__  /_/ /
+            ____/ / _  /___   _  /___          ____/ / _  __  /  _  ___ |_  _, _/ _  ____/ 
+            /____/  /_____/   /_____/          /____/  /_/ /_/   /_/  |_|/_/ |_|  /_/      
+                                                                               
+                                 ________        ______                                    
+                                 __  ___/______ ____  /_____ ________                      
+                                 _____ \ _  __ `/__  / _  _ \__  ___/                      
+                                 ____/ / / /_/ / _  /  /  __/_(__  )                       
+                                 /____/  \__,_/  /_/   \___/ /____/
+                                 ");
             Console.WriteLine("\nTo get started, type in the path to the file you want to analyse");
             filepath = Console.ReadLine();
             return filepath;

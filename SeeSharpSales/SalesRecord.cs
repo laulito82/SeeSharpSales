@@ -100,8 +100,6 @@ namespace SeeSharpSales
             return false;
         }
 
-
-
         public double GetSalesTax()
         {
             return UnitPrice * SALES_TAX_RATE;
@@ -109,7 +107,7 @@ namespace SeeSharpSales
 
         public override string ToString()
         {
-            return $"OrderID: {OrderID}, Priority: {OrderPriority}, Order date: {OrderDate}, units sold: {UnitsSold} Region: {Region}, price: {UnitPrice:c}, total profit: {TotalProfit:c}, country: {Country}";
+            return $"OrderID: {OrderID}, Priority: {OrderPriority}, Order date: {OrderDate}, \tunits sold: {UnitsSold}, price: {UnitPrice:c}, total profit: {TotalProfit:c}, \tcountry: {Country}";
         }
 
         public string SalesDetails() => $"{OrderID}\t {OrderDate}\t{Country}\t{ShipDate}\t{OrderPriority} \t{ItemType},  ";

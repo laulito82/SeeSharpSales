@@ -41,7 +41,6 @@ namespace SeeSharpSales
 
         public static void RunMenuOption(int selectedOption)
         {
-
             switch (selectedOption)
             {
                 case 1:
@@ -70,8 +69,6 @@ namespace SeeSharpSales
                     WriteJsonFile("", SalesRecordsList);
                     Console.WriteLine("\nStored as json in C.\n");
                     break;
-
-
                 default:
                     UserMenu.DisplayMenu();
                     break;
@@ -124,7 +121,6 @@ namespace SeeSharpSales
                     {
                         makeSalesRecord(line);
                     }
-
                 }
                 file.Close();
             }
@@ -244,22 +240,10 @@ namespace SeeSharpSales
                                 break;
 
                         }
-
-
-
-
                     }
-                    SalesRecordsList.SalesRecords.Add(salesRecord);
-
-                    
+                    SalesRecordsList.SalesRecords.Add(salesRecord);  
                 }
-
-                
-
-                
             }
         }
-
-
     }
 }

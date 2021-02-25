@@ -6,7 +6,6 @@ namespace SeeSharpSales
    
     public class SalesRecord : ISeeSharpSales
     {
-
         public string Region { get; set; }
         public string Country { get; set; }
         public string ItemType { get; set; }
@@ -111,15 +110,6 @@ namespace SeeSharpSales
         }
 
         public string SalesDetails() => $"{OrderID}\t {OrderDate}\t{Country}\t{ShipDate}\t{OrderPriority} \t{ItemType},  ";
-
-        /*
-        public void TotalSold(int numberOfSoldItems)
-        {
-            UnitsSold += numberOfSoldItems;
-            //https://stackoverflow.com/questions/2419343/how-to-sum-up-an-array-of-integers-in-c-sharp
-        }
-        */
-
 
     }
 }

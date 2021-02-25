@@ -108,6 +108,7 @@ namespace SeeSharpSales
             return sumProfit;
         }
 
+        #region ToBeContinued
         private int ListRegion(string region)
         {
             int countRegion = 0;
@@ -137,22 +138,6 @@ namespace SeeSharpSales
             Console.WriteLine("-------------------------------------------------------");
         }
 
-
-
-        //public int RegionList(string region)
-        //{
-        //    int countRegion = 0;
-        //    int sumSales = 0;
-        //    foreach (SalesRecord sr in SalesRecords)
-        //    {
-        //        sumSales += sr.UnitsSold;
-        //        countRegion++;
-        //        Console.WriteLine($"Total sales for {sr.Region}: {sr.UnitsSold}");
-
-        //    }
-        //    Console.WriteLine($"Total sales for {region}: {countRegion}");
-        //    Console.WriteLine($"Total units sold in {region}: {sumSales}");
-        //}
-        
+        #endregion
     }
 }

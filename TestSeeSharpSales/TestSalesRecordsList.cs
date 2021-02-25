@@ -8,7 +8,6 @@ namespace TestSeeSharpSales
     public class TestSalesRecordsList
     {
         SalesRecordsList list;
-        SalesRecord record;
 
         public TestSalesRecordsList()
         {

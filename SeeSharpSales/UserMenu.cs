@@ -29,7 +29,6 @@ namespace SeeSharpSales
             return filepath;
         }
 
-       
 
         
         public enum FileType { csv = 1, xml = 2, json = 3 }
@@ -54,8 +53,6 @@ namespace SeeSharpSales
             }
         }
         
-        
-       
 
         public static void DisplayMenu()
         {
@@ -76,7 +73,6 @@ namespace SeeSharpSales
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n Theese are your options:");
             Console.ResetColor();
-
             Console.WriteLine("\n Press 1 to display file");
             Console.WriteLine("\n Press 2 to Search for Country and Item Type");
             Console.WriteLine("\n Press 3 to search for Order ID");

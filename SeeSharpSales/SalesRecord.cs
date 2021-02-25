@@ -109,7 +109,7 @@ namespace SeeSharpSales
 
         public override string ToString()
         {
-            return $"OrderID: {OrderID} Region: {Region}, country: {Country}, price: {UnitPrice:c}, units sold: {UnitsSold}, total profit: {TotalProfit}";
+            return $"OrderID: {OrderID}, Priority: {OrderPriority}, Order date: {OrderDate}, units sold: {UnitsSold} Region: {Region}, price: {UnitPrice:c}, total profit: {TotalProfit:c}, country: {Country}";
         }
 
         public string SalesDetails() => $"{OrderID}\t {OrderDate}\t{Country}\t{ShipDate}\t{OrderPriority} \t{ItemType},  ";

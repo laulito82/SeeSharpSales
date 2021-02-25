@@ -21,7 +21,7 @@ namespace SeeSharpSales
             {
                 UserMenu.DisplayMenu();
                 int selectionOption = UserMenu.GetUserInput();
-                UserMenu.RunMenuOption(selectionOption);
+                RunMenuOption(selectionOption);
                 UserMenu.ExitOrRunNew();
 
             } while (!exit);
@@ -36,11 +36,45 @@ namespace SeeSharpSales
             Console.WriteLine($"Total sales Europe: {SalesRecordsList.TotalSoldPerRegion("Europe")}");
             Console.WriteLine($"Total sales Sub-Saharan Africa: {SalesRecordsList.TotalSoldPerRegion("Sub-Saharan Africa")}");
             Console.WriteLine($"Rauls baby TotalProfit = {SalesRecordsList.TotalProfit():c} ");
-            
+   
+        }
 
-            
+        public static void RunMenuOption(int selectedOption)
+        {
 
-           
+
+            switch (selectedOption)
+            {
+
+                case 1:
+                    Console.Clear();
+                    WriteJsonFile("", SalesRecordsList);
+                    Console.WriteLine("\nStored as json in C.\n");
+                    break;
+
+                case 2:
+                    TotalSalesInDifferentRegions();
+                    break;
+
+                case 3:
+                    Console.Clear();
+                    Console.WriteLine("You choose 3");
+                    break;
+
+
+                default:
+                    UserMenu.DisplayMenu();
+                    break;
+            }
+
+
+            static void TotalSalesInDifferentRegions()
+            {
+                //ny menylinje med nye valg etterhvert
+                Console.Clear();
+                Console.WriteLine($"Det Raul lager");
+            }
+
 
         }
 

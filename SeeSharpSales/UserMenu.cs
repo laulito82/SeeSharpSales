@@ -54,18 +54,24 @@ namespace SeeSharpSales
         public static void DisplayMenu()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.White;
+            
 
             Console.WriteLine("-------------------------------------------");
-            Console.WriteLine($" Menu for: {filepath}   ");
+
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.WriteLine($"   Menu for: {filepath}      ");
+            Console.ResetColor();
+
             Console.WriteLine("-------------------------------------------");
 
             Console.ResetColor();
 
-            Console.WriteLine("\nTheese are your options:");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n Theese are your options:");
+            Console.ResetColor();
 
-            Console.WriteLine("\n Press 1 to print report");
+            Console.WriteLine("\n Press 1 to print to json format");
 
             Console.WriteLine("\n Press 2 to se total sales in different regions");
 
@@ -97,53 +103,12 @@ namespace SeeSharpSales
             return selectedOption;
         }
 
-        public static void RunMenuOption(int selectedOption)
-        {
-
-
-            switch (selectedOption)
-            {
-
-                case 1: //print report
-                    FirstOptionForTest();
-                    break;
-
-                case 2:
-                    TotalSalesInDifferentRegions();
-                    break;
-
-                case 3:
-                    Console.Clear();
-                    Console.WriteLine("You choose 3");
-                    break;
-
-
-                default:
-                    DisplayMenu();
-                    break;
-            }
-
-            static void FirstOptionForTest()
-            {
-                Console.Clear();
-                Console.WriteLine("Det Jeanette driver med? ");
-            }
-
-            static void TotalSalesInDifferentRegions()
-            {
-                //ny menylinje med nye valg etterhvert
-                Console.Clear();
-                Console.WriteLine($"Det Raul lager");
-            }
-
-            
-        }
 
         public static bool exit;
 
         public static void ExitOrRunNew()
         {
-            Console.WriteLine("Do you want to see the menu again? press y for yes and n for no");
+            Console.WriteLine("Do you want to see the menu again? press y for yes and n to exit");
             char answer = char.Parse(Console.ReadLine());
 
             if (answer == 'y')

@@ -92,7 +92,6 @@ namespace SeeSharpSales
             {
                 //ny menylinje med nye valg etterhvert
                 Console.Clear();
-                Console.WriteLine($"Det Raul lager");
                 Console.WriteLine($"Total sales Europe: {SalesRecordsList.TotalSoldPerRegion("Europe")}");
             }
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-
-namespace SeeSharpSales
+﻿namespace SeeSharpSales
 {
     public interface ISeeSharpSales 
     {

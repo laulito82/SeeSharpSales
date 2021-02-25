@@ -62,13 +62,9 @@ namespace SeeSharpSales
                     Console.WriteLine(SalesRecordsList.SearchByOrderID(Convert.ToInt32(Console.ReadLine())));
                     break;
                 case 4:
-                    Console.Clear();
-                    
-                    break;
-                case 5:
                     TotalSalesInDifferentRegions();
                     break;
-                case 6:
+                case 5:
                     Console.Clear();
                     Console.WriteLine(SalesRecordsList.GetJsonString());
                     WriteJsonFile("", SalesRecordsList);
@@ -83,10 +79,18 @@ namespace SeeSharpSales
 
 
             static void TotalSalesInDifferentRegions()
-            {
-                //ny menylinje med nye valg etterhvert
+            { 
                 Console.Clear();
-                Console.WriteLine($"Total sales Europe: {SalesRecordsList.TotalSoldPerRegion("Europe")}");
+                Console.WriteLine("Total sales in different regions");
+                Console.WriteLine();
+                Console.WriteLine($"Total sales Europe:                            {SalesRecordsList.TotalSoldPerRegion("Europe")}");
+                Console.WriteLine($"Total sales Middle East and North Africa:      {SalesRecordsList.TotalSoldPerRegion("Middle East and North Africa")}");
+                Console.WriteLine($"Total sales North America:                     {SalesRecordsList.TotalSoldPerRegion("North America")}");
+                Console.WriteLine($"Total sales Asia:                              {SalesRecordsList.TotalSoldPerRegion("Asia")}");
+                Console.WriteLine($"Total sales Sub-Saharan Africa:                {SalesRecordsList.TotalSoldPerRegion("Sub-Saharan Africa")}");
+                Console.WriteLine($"Total sales Europe:                            {SalesRecordsList.TotalSoldPerRegion("Europe")}");
+                Console.WriteLine($"Total sales Central America and the Caribbean: {SalesRecordsList.TotalSoldPerRegion("Central America and the Caribbean")}");
+                Console.WriteLine($"Total sales Australia and Oceania:             {SalesRecordsList.TotalSoldPerRegion("Australia and Oceania")}");
             }
 
 

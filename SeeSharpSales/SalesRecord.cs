@@ -4,7 +4,7 @@ using System.Linq;
 namespace SeeSharpSales
 {
    
-    public class SalesRecord 
+    public class SalesRecord : ISeeSharpSales
     {
 
         public string Region { get; set; }
@@ -107,7 +107,7 @@ namespace SeeSharpSales
 
         public override string ToString()
         {
-            return $"OrderID: {OrderID}, Priority: {OrderPriority}, Order date: {OrderDate}, \tunits sold: {UnitsSold}, price: {UnitPrice:c}, total profit: {TotalProfit:c}, \tcountry: {Country}";
+            return $"OrderID: {OrderID}, Order date: {OrderDate}, Priority: {OrderPriority}, \nType: {ItemType} {UnitsSold}pcs, Unit price: {UnitPrice:c}, total profit: {TotalProfit:c}, \nOrder origin: {Country}, {Region}\n";
         }
 
         public string SalesDetails() => $"{OrderID}\t {OrderDate}\t{Country}\t{ShipDate}\t{OrderPriority} \t{ItemType},  ";

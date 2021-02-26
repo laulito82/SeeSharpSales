@@ -26,17 +26,6 @@ namespace SeeSharpSales
 
             } while (!exit);
             
-
-            
-
-            
-            
-            Console.WriteLine($"Rauls baby TotalSold = {SalesRecordsList.TotalSold()} ");
-            Console.WriteLine($"Total sales Asia: {SalesRecordsList.TotalSoldPerRegion("Asia")}");
-            Console.WriteLine($"Total sales Europe: {SalesRecordsList.TotalSoldPerRegion("Europe")}");
-            Console.WriteLine($"Total sales Sub-Saharan Africa: {SalesRecordsList.TotalSoldPerRegion("Sub-Saharan Africa")}");
-            Console.WriteLine($"Rauls baby TotalProfit = {SalesRecordsList.TotalProfit():c} ");
-   
         }
 
         public static void RunMenuOption(int selectedOption)
@@ -191,7 +180,7 @@ namespace SeeSharpSales
                     for (int i = 0; csvReader.TryGetField(i, out string value); i++)
                     {
                         value = value.Replace('.', ',');
-                        //Console.WriteLine($"{value} {i}");
+                        
                         switch (i)
                         {
                             case 0:
